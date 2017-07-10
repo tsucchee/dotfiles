@@ -11,4 +11,11 @@
 
 # alias for often using directory
 
-alias quantum='cd /Users/kengo/Documents/muratalab/myResearch/quantumChemistry/'
+if [ "$(uname)" = 'Darwin' ]; then
+  export LSCOLORS=xbfxcxdxbxegedabagacad
+  alias ls='ls -AG'
+else
+  eval 'dircolors ~/.colorrc'
+  alias ls='ls -A --color=auto'
+fi
+
