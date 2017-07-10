@@ -46,7 +46,7 @@ augroup END
 
 
   call dein#end()
-  colorscheme Apprentice 
+  colorscheme apprentice 
 
   call dein#save_state()
 
