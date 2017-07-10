@@ -46,6 +46,8 @@ augroup END
 
 
   call dein#end()
+  colorscheme Apprentice 
+
   call dein#save_state()
 
   if dein#check_install()
@@ -53,7 +55,7 @@ augroup END
   endif
   
  " let g:hybrid_use_iTerm_colors = 1
-  colorscheme Apprentice
+ " colorscheme Apprentice
 
   filetype plugin indent on
   syntax enable 
