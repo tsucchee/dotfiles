@@ -12,7 +12,6 @@
 # alias for often using directory
 
 if [ "$(uname)" = 'Darwin' ]; then
-  export LSCOLORS=xbfxcxdxbxegedabagacad
   alias ls='ls -AG'
 else
   eval 'dircolors ~/.colorrc'
