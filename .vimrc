@@ -6,6 +6,14 @@ if &shell =~# 'fish$'
   set shell=sh
 endif
 
+if has('win32')
+    let ostype = "Win"
+elseif has('mac')
+    let ostype = "Mac"
+else
+    let ostype = system("uname")
+endif
+
 augroup MyAutoCmd
   autocmd!
 augroup END
