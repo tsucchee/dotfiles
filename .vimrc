@@ -2,6 +2,10 @@ if &compatible
   set nocompatible
 endif
 
+if &shell =~# 'fish$'
+  set shell=sh
+endif
+
 augroup MyAutoCmd
   autocmd!
 augroup END
@@ -43,6 +47,8 @@ augroup END
   call dein#add('jacoborus/tender.vim')
   call dein#add('jeetsukumaran/vim-nefertiti')
   call dein#add('w0ng/vim-hybrid')
+  call dein#add('vim-syntastic/syntastic')
+  call dein#add('tell-k/vim-autopep8')
 
 
   call dein#end()
@@ -76,11 +82,11 @@ augroup END
 " タブ・インデント
 " ------------------------------------------------------------------------
   set expandtab " タブ入力を複数の空白入力に
-  set tabstop=2 " 画面上でタブ文字が占める幅
-  set softtabstop=2 " 連続した空白に対してタブキーやバックスペースでカーソルが動く幅
+  set tabstop=4 " 画面上でタブ文字が占める幅
+  set softtabstop=4 " 連続した空白に対してタブキーやバックスペースでカーソルが動く幅
   set autoindent " 改行時に前の行のインデントを継続する
   set smartindent " 改行時に前の行の構文をチェックして次の行のインデントを増減
-  set shiftwidth=2 " smartindentで増減する幅
+  set shiftwidth=4 " smartindentで増減する幅
 
 "--------------------------------------------------------------------------
 "　文字列検索
@@ -128,7 +134,7 @@ augroup END
   endif
 
 " ペースト設定
-  if &term =~ "xterm"
+  if &term =~ "xterm" && ostype == "Mac"
     let &t_SI .= "\e[?2004h"
     let &t_SE .= "\e[?2004l"
     let &pastetoggle = "\e[201~"
@@ -153,3 +159,5 @@ augroup END
   
   set clipboard+=unnamed
 " plugin 設定
+"
+let g:rustfmt_autosave = 1

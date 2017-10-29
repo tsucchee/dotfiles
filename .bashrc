@@ -7,7 +7,7 @@
   if [ "$(uname)" == 'Darwin' ]; then
   export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
   elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
-  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
   fi
 
  # export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/lib/python3.6/site-packages
@@ -37,5 +37,5 @@ fi
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/Applications/FontForge.app/Contents/MacOS:$PATH
 
-alias bhi-py='cd ~/BHI/swetc/crawl/newscrawl/newscrawl/spiders/'
-alias bhi-sh='cd ~/BHI/swetc/crawl/newscrawl/'
+alias bhi-py='cd ~/swing/swetc/crawl/newscrawl/newscrawl/spiders/'
+alias bhi-sh='cd ~/swing/swetc/crawl/newscrawl/'
